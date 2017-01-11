@@ -346,6 +346,9 @@ def stress_test_driver():
 
     reconstructed = reconstruct(fragment_dict, CHOP_LENGTH / 2)
 
+    for fragment_name in fragment_dict:
+        assert fragment_dict[fragment_name] in reconstructed
+
     assert test_fragment == reconstructed
 
 def random_test_driver():
@@ -370,6 +373,10 @@ def random_test_driver():
     if test_fragment != reconstructed:
         print test_fragment
         print reconstructed
+
+    for fragment_name in fragment_dict:
+        assert fragment_dict[fragment_name] in reconstructed
+
     assert test_fragment == reconstructed
 
     return length, chop_length, step_size
@@ -413,6 +420,9 @@ def run_e2e_test(cleanup=True):
     write_fragments_to_disk(fragment_dict, TEST_FILE)
 
     reconstructed = reconstruct_from_file(TEST_FILE)
+
+    for fragment_name in fragment_dict:
+        assert fragment_dict[fragment_name] in reconstructed
 
     assert initial_test_fragment == reconstructed
 
