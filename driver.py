@@ -102,7 +102,7 @@ def generate_left_overlaps(fragment, min_len=1):
 
         G, GA, GAT, GATC
 
-        from right hand side
+        from left hand side
 
         Args:
             fragment (str) : the fragment to generate subfragments from
