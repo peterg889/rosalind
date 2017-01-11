@@ -6,6 +6,30 @@ into the shortest possible super string
 
 Includes test cases in tests.py and helper methods in utils.py
 
+The input to the problem is at most 50 DNA sequences (i.e, the character set is limited to T/C/G/A) whose length does not exceed 1000 characters. The sequences are given in FASTA format (https://en.wikipedia.org/wiki/FASTA_format). These sequences are all different fragments of one chromosome.
+
+The specific set of sequences you will get satisfy a very unique property:  there exists a unique way to reconstruct the entire chromosome from these reads by gluing together pairs of reads that overlap by more than half their length. An example set of input strings is attached.
+
+
+## Sample File
+
+**Example input:**
+
+```
+>Frag_56
+ATTAGACCTG
+>Frag_57
+CCTGCCGGAA
+>Frag_58
+AGACCTGCCG
+>Frag_59
+GCCGGAATAC
+```
+
+**Example output:**
+```
+ATTAGACCTGCCGGAATAC
+```
 ## Code Example
 
 To reconstruct a fragment from a FASTA specified file, simply call `reconstruct_from_file(filename)`
